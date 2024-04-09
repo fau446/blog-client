@@ -31,7 +31,6 @@ function App({ isLoggedIn, setIsLoggedIn }) {
           },
         });
         const jsonData = await response.json();
-        console.log(jsonData);
         setPosts(jsonData.posts);
       } catch (err) {
         console.log(err);
@@ -48,7 +47,11 @@ function App({ isLoggedIn, setIsLoggedIn }) {
   return (
     <>
       {isLoggedIn ? (
-        <a onClick={logOut}>Log Out</a>
+        <>
+          <a onClick={logOut}>Log Out</a>
+          <br />
+          <Link to="create-post">New Post</Link>
+        </>
       ) : (
         <Link to="/login">Login</Link>
       )}

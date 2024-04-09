@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import PostDetail from "./components/PostDetail";
 import Login from "./components/Login";
+import CreatePost from "./components/CreatePost";
 
 function Router() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -40,6 +41,10 @@ function Router() {
     {
       path: "login",
       element: <Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />,
+    },
+    {
+      path: "create-post",
+      element: <CreatePost />,
     },
   ]);
 
